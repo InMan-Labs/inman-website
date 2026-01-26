@@ -41,31 +41,29 @@ export const ProductSection = () => {
           </p>
         </motion.div>
 
-        {/* What InMan Is */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
-        >
-          <div className="bg-card-gradient border border-subtle rounded-xl p-8 md:p-10 shadow-card">
+        {/* What InMan Is + What InMan Is Not - Side by Side */}
+        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+          {/* What InMan Is */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-card-gradient border border-subtle rounded-xl p-8 shadow-card h-full"
+          >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
                 <Workflow size={24} className="text-primary" />
               </div>
-              <div>
-                <h3 className="text-2xl font-semibold">What InMan Is</h3>
-                <p className="text-muted-foreground">A governed execution platform for infrastructure operations</p>
-              </div>
+              <h3 className="text-xl font-semibold">What InMan Is</h3>
             </div>
             
-            <p className="text-muted-foreground mb-8 max-w-3xl">
-              InMan turns runbooks into controlled, executable workflows with built-in approvals, 
-              safety checks, and full auditability. InMan helps teams:
+            <p className="text-muted-foreground mb-6">
+              A governed execution platform that turns runbooks into controlled workflows with built-in approvals, 
+              safety checks, and full auditability.
             </p>
 
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="space-y-3">
               {whatItIs.map((item, index) => (
                 <motion.div
                   key={index}
@@ -73,25 +71,22 @@ export const ProductSection = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="flex items-start gap-3 p-4 rounded-lg bg-muted/30 border border-subtle"
+                  className="flex items-start gap-3"
                 >
-                  <CheckCircle size={20} className="text-primary shrink-0 mt-0.5" />
-                  <span className="text-foreground">{item}</span>
+                  <CheckCircle size={18} className="text-primary shrink-0 mt-0.5" />
+                  <span className="text-foreground text-sm">{item}</span>
                 </motion.div>
               ))}
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
 
-        {/* What InMan Is Not + Where It Fits */}
-        <div className="grid lg:grid-cols-2 gap-8">
           {/* What InMan Is Not */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-card-gradient border border-subtle rounded-xl p-8 shadow-card"
+            className="bg-card-gradient border border-subtle rounded-xl p-8 shadow-card h-full"
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-lg bg-destructive/10 flex items-center justify-center">
@@ -104,7 +99,7 @@ export const ProductSection = () => {
               {whatItIsNot.map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
                   <XCircle size={18} className="text-muted-foreground shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">{item}</span>
+                  <span className="text-muted-foreground text-sm">{item}</span>
                 </div>
               ))}
             </div>
@@ -114,41 +109,36 @@ export const ProductSection = () => {
               reviewed, and governed.
             </p>
           </motion.div>
-
-          {/* Where InMan Fits */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-card-gradient border border-subtle rounded-xl p-8 shadow-card"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                <Layers size={24} className="text-accent" />
-              </div>
-              <h3 className="text-xl font-semibold">Where InMan Fits</h3>
-            </div>
-
-            <p className="text-muted-foreground mb-6">
-              InMan sits between people and infrastructure, alongside your existing tools. It works with:
-            </p>
-
-            <div className="space-y-3 mb-6">
-              {integrations.map((item, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckCircle size={18} className="text-accent shrink-0 mt-0.5" />
-                  <span className="text-foreground">{item}</span>
-                </div>
-              ))}
-            </div>
-
-            <p className="text-sm text-muted-foreground border-t border-subtle pt-4">
-              InMan does not replace these systems—it adds a safe execution layer that governs 
-              how infrastructure actions are carried out.
-            </p>
-          </motion.div>
         </div>
+
+        {/* Where InMan Fits */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="bg-card-gradient border border-subtle rounded-xl p-8 shadow-card"
+        >
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+              <Layers size={24} className="text-accent" />
+            </div>
+            <h3 className="text-xl font-semibold">Where InMan Fits</h3>
+          </div>
+
+          <p className="text-muted-foreground mb-6">
+            InMan sits between people and infrastructure, alongside your existing tools. It works with:
+          </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {integrations.map((item, index) => (
+              <div key={index} className="flex items-start gap-3 p-3 rounded-lg bg-muted/30 border border-subtle">
+                <CheckCircle size={18} className="text-accent shrink-0 mt-0.5" />
+                <span className="text-foreground text-sm">{item}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
 
         {/* Visual Diagram */}
         <motion.div
