@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const navLinks = [
   { label: "Problem", href: "#problem" },
@@ -13,6 +14,8 @@ const navLinks = [
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,9 +27,19 @@ export const Navbar = () => {
 
   const scrollToSection = (href: string) => {
     setIsMobileMenuOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
@@ -65,20 +78,11 @@ export const Navbar = () => {
 
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center gap-3">
-              <Button
-                variant="heroOutline"
-                size="sm"
-                onClick={() => scrollToSection("#contact")}
-              >
-                Talk to an Expert
-              </Button>
-              <Button
-                variant="hero"
-                size="sm"
-                onClick={() => scrollToSection("#contact")}
-              >
-                Request a Demo
-              </Button>
+              <Link to="/demo">
+                <Button variant="hero" size="sm">
+                  Request a Demo
+                </Button>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -113,20 +117,11 @@ export const Navbar = () => {
                 </button>
               ))}
               <div className="flex flex-col gap-3 pt-4 border-t border-subtle">
-                <Button
-                  variant="heroOutline"
-                  size="lg"
-                  onClick={() => scrollToSection("#contact")}
-                >
-                  Talk to an Expert
-                </Button>
-                <Button
-                  variant="hero"
-                  size="lg"
-                  onClick={() => scrollToSection("#contact")}
-                >
-                  Request a Demo
-                </Button>
+                <Link to="/demo" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Button variant="hero" size="lg" className="w-full">
+                    Request a Demo
+                  </Button>
+                </Link>
               </div>
             </div>
           </motion.div>

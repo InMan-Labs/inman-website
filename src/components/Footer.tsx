@@ -1,39 +1,108 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <footer className="py-12 border-t border-subtle">
+    <footer className="border-t border-subtle bg-card/30">
       <div className="section-container">
+        {/* Main Footer Content */}
+        <div className="py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Brand Column */}
+          <div className="md:col-span-1">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 bg-accent-gradient rounded-lg flex items-center justify-center">
+                <span className="text-primary-foreground font-bold text-sm">I</span>
+              </div>
+              <span className="font-semibold text-lg text-foreground">Inferman Labs</span>
+            </div>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Governed execution for infrastructure operations. Safety, control, and auditability at every step.
+            </p>
+          </div>
+
+          {/* Product Column */}
+          <div>
+            <h4 className="font-semibold text-foreground mb-4">Product</h4>
+            <ul className="space-y-2">
+              <li>
+                <button onClick={() => scrollToSection("#problem")} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  The Problem
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection("#product")} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Product Overview
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection("#use-cases")} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Use Cases
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection("#security")} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Security
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          {/* Company Column */}
+          <div>
+            <h4 className="font-semibold text-foreground mb-4">Company</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/demo" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Request a Demo
+                </Link>
+              </li>
+              <li>
+                <a href="mailto:abhishekasgola09@gmail.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Contact Us
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact Column */}
+          <div>
+            <h4 className="font-semibold text-foreground mb-4">Get in Touch</h4>
+            <p className="text-sm text-muted-foreground mb-3">
+              Ready to see how InMan can transform your infrastructure operations?
+            </p>
+            <Link 
+              to="/demo" 
+              className="inline-flex items-center text-sm text-primary hover:text-primary/80 transition-colors font-medium"
+            >
+              Schedule a Demo →
+            </Link>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col md:flex-row items-center justify-between gap-6"
+          className="py-6 border-t border-subtle flex flex-col md:flex-row items-center justify-between gap-4"
         >
-          {/* Logo */}
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-accent-gradient rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">I</span>
-            </div>
-            <span className="font-semibold text-lg text-foreground">Inferman Labs</span>
-          </div>
-
-          {/* Links */}
-          <div className="flex items-center gap-6 text-sm text-muted-foreground">
-            <a href="#problem" className="hover:text-foreground transition-colors">Problem</a>
-            <a href="#product" className="hover:text-foreground transition-colors">Product</a>
-            <a href="#use-cases" className="hover:text-foreground transition-colors">Use Cases</a>
-            <a href="#security" className="hover:text-foreground transition-colors">Security</a>
-            <a href="#contact" className="hover:text-foreground transition-colors">Contact</a>
-          </div>
-
-          {/* Copyright */}
           <p className="text-sm text-muted-foreground">
             © {currentYear} Inferman Labs. All rights reserved.
           </p>
+          <div className="flex items-center gap-6 text-sm text-muted-foreground">
+            <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>
+          </div>
         </motion.div>
       </div>
     </footer>

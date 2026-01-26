@@ -58,100 +58,53 @@ export const ProblemSection = () => {
           </p>
         </motion.div>
 
-        {/* Cards Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 items-start">
-          {/* Main Featured Card */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative"
-          >
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeIndex}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.4 }}
-                className="bg-card-gradient border border-subtle rounded-xl p-8 md:p-10 shadow-card min-h-[280px] flex flex-col justify-center"
-              >
-                <div className="w-14 h-14 rounded-lg bg-destructive/10 flex items-center justify-center mb-6">
-                  {(() => {
-                    const IconComponent = problems[activeIndex].icon;
-                    return <IconComponent size={28} className="text-destructive" />;
-                  })()}
-                </div>
-                <h3 className="text-2xl md:text-3xl font-semibold mb-4">
-                  {problems[activeIndex].title}
-                </h3>
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  {problems[activeIndex].description}
-                </p>
-              </motion.div>
-            </AnimatePresence>
+        {/* Rotating Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-2xl mx-auto"
+        >
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeIndex}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+              className="bg-card-gradient border border-subtle rounded-xl p-8 md:p-10 shadow-card min-h-[280px] flex flex-col justify-center"
+            >
+              <div className="w-14 h-14 rounded-lg bg-destructive/10 flex items-center justify-center mb-6 mx-auto">
+                {(() => {
+                  const IconComponent = problems[activeIndex].icon;
+                  return <IconComponent size={28} className="text-destructive" />;
+                })()}
+              </div>
+              <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-center">
+                {problems[activeIndex].title}
+              </h3>
+              <p className="text-muted-foreground text-lg leading-relaxed text-center">
+                {problems[activeIndex].description}
+              </p>
+            </motion.div>
+          </AnimatePresence>
 
-            {/* Progress Indicators */}
-            <div className="flex gap-2 mt-6">
-              {problems.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveIndex(index)}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
-                    index === activeIndex
-                      ? "w-8 bg-primary"
-                      : "w-4 bg-muted hover:bg-muted-foreground/30"
-                  }`}
-                />
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Mini Cards */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-4"
-          >
-            {problems.map((problem, index) => {
-              const IconComponent = problem.icon;
-              return (
-                <button
-                  key={index}
-                  onClick={() => setActiveIndex(index)}
-                  className={`w-full text-left p-5 rounded-lg border transition-all duration-300 ${
-                    index === activeIndex
-                      ? "bg-card border-primary/30 shadow-glow"
-                      : "bg-card/50 border-subtle hover:bg-card hover:border-muted-foreground/20"
-                  }`}
-                >
-                  <div className="flex items-start gap-4">
-                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 ${
-                      index === activeIndex ? "bg-destructive/10" : "bg-muted"
-                    }`}>
-                      <IconComponent size={20} className={
-                        index === activeIndex ? "text-destructive" : "text-muted-foreground"
-                      } />
-                    </div>
-                    <div>
-                      <h4 className={`font-medium mb-1 ${
-                        index === activeIndex ? "text-foreground" : "text-muted-foreground"
-                      }`}>
-                        {problem.title}
-                      </h4>
-                      <p className="text-sm text-muted-foreground line-clamp-2">
-                        {problem.description}
-                      </p>
-                    </div>
-                  </div>
-                </button>
-              );
-            })}
-          </motion.div>
-        </div>
+          {/* Progress Indicators */}
+          <div className="flex gap-2 mt-6 justify-center">
+            {problems.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveIndex(index)}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  index === activeIndex
+                    ? "w-8 bg-primary"
+                    : "w-4 bg-muted hover:bg-muted-foreground/30"
+                }`}
+              />
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
