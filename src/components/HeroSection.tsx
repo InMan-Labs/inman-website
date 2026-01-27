@@ -73,9 +73,6 @@ export const HeroSection = () => {
             <Button variant="hero" size="xl" onClick={scrollToContact}>
               Request a Demo
             </Button>
-            <Button variant="heroOutline" size="xl" onClick={scrollToContact}>
-              Talk to an Expert
-            </Button>
           </motion.div>
 
           {/* Trust Indicators */}
@@ -86,9 +83,10 @@ export const HeroSection = () => {
             className="flex flex-wrap items-center justify-center gap-6 md:gap-10"
           >
             {[
-              { icon: CheckCircle, text: "Full Auditability" },
-              { icon: Lock, text: "Built-in Approvals" },
+              { icon: Lock, text: "Execution Isolation" },
+              { icon: CheckCircle, text: "Built-in Approvals" },
               { icon: Shield, text: "Policy Enforcement" },
+              { icon: CheckCircle, text: "Full Auditability" },
             ].map((item, index) => (
               <div key={index} className="flex items-center gap-2 text-muted-foreground">
                 <item.icon size={18} className="text-primary" />

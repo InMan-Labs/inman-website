@@ -44,6 +44,11 @@ export const Footer = () => {
                 </button>
               </li>
               <li>
+                <button onClick={() => scrollToSection("#roi-calculator")} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  ROI Calculator
+                </button>
+              </li>
+              <li>
                 <button onClick={() => scrollToSection("#use-cases")} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Use Cases
                 </button>
@@ -65,17 +70,12 @@ export const Footer = () => {
                   Request a Demo
                 </Link>
               </li>
-              <li>
-                <a href="mailto:abhishekasgola09@gmail.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Contact Us
-                </a>
-              </li>
             </ul>
           </div>
 
-          {/* Contact Column */}
+          {/* Get Started Column */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Get in Touch</h4>
+            <h4 className="font-semibold text-foreground mb-4">Get Started</h4>
             <p className="text-sm text-muted-foreground mb-3">
               Ready to see how InMan can transform your infrastructure operations?
             </p>
