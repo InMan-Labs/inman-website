@@ -38,7 +38,7 @@ export const ProductArchitectureDiagram = () => {
                 </div>
                 
                 {/* Main Platform Box */}
-                <div className="bg-muted/20 border-2 border-primary/50 rounded-xl p-6 pt-8 min-w-[280px]">
+                <div className="bg-muted/20 border-2 border-primary/50 rounded-xl p-6 pt-8 min-w-[280px] mx-auto">
                   <h4 className="text-lg font-semibold text-center mb-4">Governed Execution Platform</h4>
                   
                   <div className="flex flex-wrap justify-center gap-3">
@@ -60,9 +60,9 @@ export const ProductArchitectureDiagram = () => {
           <div className="w-px h-8 bg-muted-foreground/30" />
 
           {/* Runner Section */}
-          <div className="flex flex-col items-center">
-            <div className="bg-muted/30 border border-subtle rounded-xl p-6 min-w-[300px]">
-              <div className="flex items-center justify-between mb-2">
+          <div className="flex flex-col items-center w-full">
+            <div className="bg-muted/30 border border-subtle rounded-xl p-6 min-w-[300px] mx-auto">
+              <div className="flex items-center justify-center gap-4 mb-2">
                 <div className="flex items-center gap-2">
                   <ArrowRight size={16} className="text-primary" />
                   <span className="font-medium text-foreground">Runner</span>

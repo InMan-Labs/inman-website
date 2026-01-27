@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { AlertTriangle, Shuffle, FileWarning, Zap, Eye } from "lucide-react";
 
@@ -37,6 +37,14 @@ const problems = [
 
 export const ProblemSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+
+  // Auto-rotate cards
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % problems.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section id="problem" className="py-24 md:py-32 relative">

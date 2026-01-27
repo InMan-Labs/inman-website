@@ -90,8 +90,8 @@ export const ProductSection = () => {
             className="bg-card-gradient border border-subtle rounded-xl p-8 shadow-card h-full"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-lg bg-destructive/10 flex items-center justify-center">
-                <XCircle size={24} className="text-destructive" />
+              <div className="w-12 h-12 rounded-lg bg-red-500/10 flex items-center justify-center">
+                <XCircle size={24} className="text-red-500" />
               </div>
               <h3 className="text-xl font-semibold">What InMan Is Not</h3>
             </div>
@@ -99,7 +99,7 @@ export const ProductSection = () => {
             <div className="space-y-3 mb-6">
               {whatItIsNot.map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <XCircle size={18} className="text-muted-foreground shrink-0 mt-0.5" />
+                  <XCircle size={18} className="text-red-500 shrink-0 mt-0.5" />
                   <span className="text-muted-foreground text-sm">{item}</span>
                 </div>
               ))}

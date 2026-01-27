@@ -48,7 +48,7 @@ export const HeroSection = () => {
             className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight mb-6"
           >
             Governed Execution for{" "}
-            <span className="text-gradient">Infrastructure Operations</span>
+            <span className="text-gradient inline-block px-2 py-1 bg-primary/10 rounded-lg border border-primary/30">Infrastructure Operations</span>
           </motion.h1>
 
           {/* Subheadline */}
