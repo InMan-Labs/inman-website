@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { CheckCircle, XCircle, Layers, Users, Eye, Workflow } from "lucide-react";
+import { ProductArchitectureDiagram } from "./ProductArchitectureDiagram";
 
 const whatItIs = [
   "Safely execute operational actions on servers and infrastructure",
@@ -140,13 +141,16 @@ export const ProductSection = () => {
           </div>
         </motion.div>
 
-        {/* Visual Diagram */}
+        {/* Product Architecture Diagram */}
+        <ProductArchitectureDiagram />
+
+        {/* Visual Diagram - InMan in Your Stack */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-16"
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-8"
         >
           <div className="bg-card-gradient border border-subtle rounded-xl p-8 md:p-12 shadow-card">
             <h3 className="text-xl font-semibold text-center mb-10">InMan in Your Stack</h3>

@@ -57,7 +57,7 @@ const Demo = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-subtle">
         <div className="section-container">
@@ -80,7 +80,7 @@ const Demo = () => {
       </header>
 
       {/* Main Content */}
-      <main className="pt-24 pb-16">
+      <main className="pt-24 pb-16 flex-1">
         <div className="section-container">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             {/* Left Column - Info */}
@@ -219,6 +219,15 @@ const Demo = () => {
           </div>
         </div>
       </main>
+
+      {/* Simple Footer */}
+      <footer className="py-6 border-t border-subtle">
+        <div className="section-container">
+          <p className="text-sm text-muted-foreground text-center">
+            © {new Date().getFullYear()} Inferman Labs. All rights reserved.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
