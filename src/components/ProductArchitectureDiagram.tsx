@@ -32,7 +32,7 @@ export const ProductArchitectureDiagram = () => {
               <div className="md:hidden text-muted-foreground">↓</div>
             </div>
 
-            {/* Vertical stack: InMan Platform + Runner centered */}
+            {/* Vertical stack: InMan Platform + Runner + Infrastructure centered */}
             <div className="flex flex-col items-center gap-6">
               {/* InMan Platform */}
               <div className="relative">
@@ -76,30 +76,30 @@ export const ProductArchitectureDiagram = () => {
                   Installed locally in your environment
                 </p>
               </div>
-            </div>
-          </div>
 
-          {/* Connection Lines to Infrastructure */}
-          <div className="flex items-center justify-center gap-4 w-full max-w-[300px]">
-            <div className="flex-1 h-px bg-muted-foreground/30" />
-            <div className="w-2 h-2 rounded-full bg-muted-foreground/30" />
-            <div className="flex-1 h-px bg-muted-foreground/30" />
-          </div>
-
-          {/* Infrastructure Icons */}
-          <div className="flex items-center justify-center gap-8 md:gap-12">
-            {[
-              { icon: Server, label: "Servers" },
-              { icon: Cloud, label: "Cloud" },
-              { icon: Monitor, label: "VMs" },
-            ].map((item) => (
-              <div key={item.label} className="flex flex-col items-center">
-                <div className="w-14 h-14 rounded-lg bg-muted/50 border border-subtle flex items-center justify-center mb-2">
-                  <item.icon size={24} className="text-muted-foreground" />
-                </div>
-                <span className="text-xs text-muted-foreground">{item.label}</span>
+              {/* Connection Lines to Infrastructure */}
+              <div className="flex items-center justify-center gap-4 w-[280px]">
+                <div className="flex-1 h-px bg-muted-foreground/30" />
+                <div className="w-2 h-2 rounded-full bg-muted-foreground/30" />
+                <div className="flex-1 h-px bg-muted-foreground/30" />
               </div>
-            ))}
+
+              {/* Infrastructure Icons */}
+              <div className="flex items-center justify-center gap-8 md:gap-12">
+                {[
+                  { icon: Server, label: "Servers" },
+                  { icon: Cloud, label: "Cloud" },
+                  { icon: Monitor, label: "VMs" },
+                ].map((item) => (
+                  <div key={item.label} className="flex flex-col items-center">
+                    <div className="w-14 h-14 rounded-lg bg-muted/50 border border-subtle flex items-center justify-center mb-2">
+                      <item.icon size={24} className="text-muted-foreground" />
+                    </div>
+                    <span className="text-xs text-muted-foreground">{item.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
