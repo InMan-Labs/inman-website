@@ -14,10 +14,10 @@ export const ProductArchitectureDiagram = () => {
         <h3 className="text-xl font-semibold text-center mb-10">Product Architecture Overview</h3>
         
         <div className="flex flex-col items-center gap-8">
-          {/* Main Row - Engineer + Arrow aligned with InMan/Runner stack */}
-          <div className="flex flex-col md:flex-row items-start justify-center gap-6 md:gap-12 w-full">
-            {/* Engineer + Arrow - vertically centered with InMan box */}
-            <div className="flex items-center gap-6 md:gap-12 md:pt-12">
+          {/* Main layout with Engineer on left, centered stack */}
+          <div className="relative w-full">
+            {/* Engineer + Arrow positioned to the left of center */}
+            <div className="hidden md:flex items-center gap-6 absolute left-1/2 -translate-x-[280px] top-12">
               {/* Engineer */}
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 rounded-full border-2 border-muted flex items-center justify-center mb-3">
@@ -28,12 +28,23 @@ export const ProductArchitectureDiagram = () => {
               </div>
 
               {/* Arrow */}
-              <ArrowRight size={24} className="text-muted-foreground hidden md:block" />
-              <div className="md:hidden text-muted-foreground">↓</div>
+              <ArrowRight size={24} className="text-muted-foreground" />
             </div>
 
-            {/* Vertical stack: InMan Platform + Runner + Infrastructure centered */}
-            <div className="flex flex-col items-center gap-6">
+            {/* Mobile Engineer */}
+            <div className="flex md:hidden flex-col items-center mb-4">
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-16 rounded-full border-2 border-muted flex items-center justify-center mb-3">
+                  <User size={32} className="text-muted-foreground" />
+                </div>
+                <span className="text-sm font-medium text-foreground">Engineer</span>
+                <span className="text-xs text-muted-foreground">Human Control</span>
+              </div>
+              <div className="text-muted-foreground mt-2">↓</div>
+            </div>
+
+            {/* Centered vertical stack: InMan Platform + Runner + Infrastructure */}
+            <div className="flex flex-col items-center gap-6 mx-auto">
               {/* InMan Platform */}
               <div className="relative">
                 {/* InMan Badge */}
