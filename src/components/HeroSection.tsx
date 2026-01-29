@@ -1,13 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Shield, CheckCircle, Lock } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const HeroSection = () => {
-  const scrollToContact = () => {
-    const element = document.querySelector("#contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  const navigate = useNavigate();
+
+  const goToDemo = () => {
+    navigate("/demo");
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -48,7 +49,7 @@ export const HeroSection = () => {
             className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight mb-6"
           >
             Governed Execution for{" "}
-            <span className="text-gradient">Infrastructure Operations</span>
+            <span className="text-primary">Infrastructure Operations</span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -70,7 +71,7 @@ export const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
           >
-            <Button variant="hero" size="xl" onClick={scrollToContact}>
+            <Button variant="hero" size="xl" onClick={goToDemo}>
               Request a Demo
             </Button>
           </motion.div>

@@ -14,20 +14,23 @@ export const ProductArchitectureDiagram = () => {
         <h3 className="text-xl font-semibold text-center mb-10">Product Architecture Overview</h3>
         
         <div className="flex flex-col items-center gap-8">
-          {/* Engineer on the left */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 w-full">
-            {/* Engineer */}
-            <div className="flex flex-col items-center">
-              <div className="w-16 h-16 rounded-full border-2 border-muted flex items-center justify-center mb-3">
-                <User size={32} className="text-muted-foreground" />
+          {/* Main Row - Engineer + Arrow aligned with InMan/Runner stack */}
+          <div className="flex flex-col md:flex-row items-start justify-center gap-6 md:gap-12 w-full">
+            {/* Engineer + Arrow - vertically centered with InMan box */}
+            <div className="flex items-center gap-6 md:gap-12 md:pt-12">
+              {/* Engineer */}
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-16 rounded-full border-2 border-muted flex items-center justify-center mb-3">
+                  <User size={32} className="text-muted-foreground" />
+                </div>
+                <span className="text-sm font-medium text-foreground">Engineer</span>
+                <span className="text-xs text-muted-foreground">Human Control</span>
               </div>
-              <span className="text-sm font-medium text-foreground">Engineer</span>
-              <span className="text-xs text-muted-foreground">Human Control</span>
-            </div>
 
-            {/* Arrow */}
-            <ArrowRight size={24} className="text-muted-foreground hidden md:block" />
-            <div className="md:hidden text-muted-foreground">↓</div>
+              {/* Arrow */}
+              <ArrowRight size={24} className="text-muted-foreground hidden md:block" />
+              <div className="md:hidden text-muted-foreground">↓</div>
+            </div>
 
             {/* Vertical stack: InMan Platform + Runner centered */}
             <div className="flex flex-col items-center gap-6">

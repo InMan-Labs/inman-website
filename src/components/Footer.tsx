@@ -66,7 +66,7 @@ export const Footer = () => {
             <h4 className="font-semibold text-foreground mb-4">Company</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/demo" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/demo" onClick={() => window.scrollTo(0, 0)} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Request a Demo
                 </Link>
               </li>
@@ -81,6 +81,7 @@ export const Footer = () => {
             </p>
             <Link 
               to="/demo" 
+              onClick={() => window.scrollTo(0, 0)}
               className="inline-flex items-center text-sm text-primary hover:text-primary/80 transition-colors font-medium"
             >
               Schedule a Demo →
