@@ -14,7 +14,7 @@ export const ProductArchitectureDiagram = () => {
         <h3 className="text-xl font-semibold text-center mb-10">Product Architecture Overview</h3>
         
         <div className="flex flex-col items-center gap-8">
-          {/* Top Row - Engineer + InMan Platform */}
+          {/* Engineer on the left */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 w-full">
             {/* Engineer */}
             <div className="flex flex-col items-center">
@@ -29,8 +29,9 @@ export const ProductArchitectureDiagram = () => {
             <ArrowRight size={24} className="text-muted-foreground hidden md:block" />
             <div className="md:hidden text-muted-foreground">↓</div>
 
-            {/* InMan Platform */}
-            <div className="flex flex-col items-center">
+            {/* Vertical stack: InMan Platform + Runner centered */}
+            <div className="flex flex-col items-center gap-6">
+              {/* InMan Platform */}
               <div className="relative">
                 {/* InMan Badge */}
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary rounded-full text-primary-foreground text-xs font-medium z-10">
@@ -38,7 +39,7 @@ export const ProductArchitectureDiagram = () => {
                 </div>
                 
                 {/* Main Platform Box */}
-                <div className="bg-muted/20 border-2 border-primary/50 rounded-xl p-6 pt-8 min-w-[280px] mx-auto">
+                <div className="bg-muted/20 border-2 border-primary/50 rounded-xl p-6 pt-8 w-[280px]">
                   <h4 className="text-lg font-semibold text-center mb-4">Governed Execution Platform</h4>
                   
                   <div className="flex flex-wrap justify-center gap-3">
@@ -53,27 +54,25 @@ export const ProductArchitectureDiagram = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
 
-          {/* Connection Line */}
-          <div className="w-px h-8 bg-muted-foreground/30" />
+              {/* Connection Line */}
+              <div className="w-px h-6 bg-muted-foreground/30" />
 
-          {/* Runner Section */}
-          <div className="flex flex-col items-center w-full">
-            <div className="bg-muted/30 border border-subtle rounded-xl p-6 min-w-[300px] mx-auto">
-              <div className="flex items-center justify-center gap-4 mb-2">
-                <div className="flex items-center gap-2">
-                  <ArrowRight size={16} className="text-primary" />
-                  <span className="font-medium text-foreground">Runner</span>
+              {/* Runner Section - same width as InMan box */}
+              <div className="bg-muted/30 border border-subtle rounded-xl p-6 w-[280px]">
+                <div className="flex items-center justify-center gap-4 mb-2">
+                  <div className="flex items-center gap-2">
+                    <ArrowRight size={16} className="text-primary" />
+                    <span className="font-medium text-foreground">Runner</span>
+                  </div>
+                  <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-medium">
+                    Least Privileged
+                  </span>
                 </div>
-                <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-medium">
-                  Least Privileged
-                </span>
+                <p className="text-sm text-muted-foreground text-center">
+                  Installed locally in your environment
+                </p>
               </div>
-              <p className="text-sm text-muted-foreground text-center">
-                Installed locally in your environment
-              </p>
             </div>
           </div>
 
