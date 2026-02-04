@@ -14,7 +14,6 @@ import {
   CheckCircle
 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
 import dashboardImage from "@/assets/inman-dashboard.png";
 
 const fadeInUp = {
@@ -396,8 +395,78 @@ const ProductPage = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <Footer />
+       {/* Footer */}
+      <footer className="border-t border-slate-200 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+            {/* Brand */}
+            <div className="md:col-span-1">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-sm">I</span>
+                </div>
+                <span className="font-semibold text-lg text-slate-900">Inferman Labs</span>
+              </div>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Governed execution for infrastructure operations. Safety, control, and auditability at every step.
+              </p>
+            </div>
+
+            {/* Product */}
+            <div>
+              <h4 className="font-semibold text-slate-900 mb-4">Product</h4>
+              <ul className="space-y-2">
+                <li>
+                  <Link to="/product" onClick={() => window.scrollTo(0, 0)} className="text-sm text-slate-600 hover:text-slate-900 transition-colors">
+                    How It Works
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Company */}
+            <div>
+              <h4 className="font-semibold text-slate-900 mb-4">Company</h4>
+              <ul className="space-y-2">
+                <li>
+                  <Link to="/demo" onClick={() => window.scrollTo(0, 0)} className="text-sm text-slate-600 hover:text-slate-900 transition-colors">
+                    Request a Demo
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Get Started */}
+            <div>
+              <h4 className="font-semibold text-slate-900 mb-4">Get Started</h4>
+              <p className="text-sm text-slate-600 mb-3">
+                Ready to see how InMan can transform your infrastructure operations?
+              </p>
+              <Link 
+                to="/demo" 
+                onClick={() => window.scrollTo(0, 0)}
+                className="inline-flex items-center text-sm text-blue-600 hover:text-blue-700 transition-colors font-medium"
+              >
+                Schedule a Demo →
+              </Link>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="py-6 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-sm text-slate-500">
+              © {new Date().getFullYear()} Inferman Labs. All rights reserved.
+            </p>
+            <div className="flex items-center gap-6 text-sm text-slate-500">
+              <a href="#" className="hover:text-slate-900 transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-slate-900 transition-colors">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
     </div>
   );
 };
