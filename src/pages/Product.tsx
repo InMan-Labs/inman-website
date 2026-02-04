@@ -453,13 +453,13 @@ const ProductPage = () => {
         </div>
 
           {/* Bottom Bar */}
-           <div className="py-6 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-slate-500">
+           <div className="py-6 border-t border-subtle flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} Inferman Labs. All rights reserved.
             </p>
             <div className="flex items-center gap-6 text-sm text-slate-500">
-              <a href="#" className="hover:text-slate-900 transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-slate-900 transition-colors">Terms of Service</a>
+              <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>
             </div>
           </div>
         </div>
