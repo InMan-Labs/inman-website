@@ -400,17 +400,17 @@ const ProductPage = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Brand */}
-            <div className="md:col-span-1">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">I</span>
-                </div>
-                <span className="font-semibold text-lg text-slate-900">Inferman Labs</span>
+            div className="md:col-span-1">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 bg-accent-gradient rounded-lg flex items-center justify-center">
+                <span className="text-primary-foreground font-bold text-sm">I</span>
               </div>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                Governed execution for infrastructure operations. Safety, control, and auditability at every step.
-              </p>
+              <span className="font-semibold text-lg text-foreground">InMan Labs</span>
             </div>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Governed execution for infrastructure operations. Safety, control, and auditability at every step.
+            </p>
+          </div>
 
             {/* Product */}
             <div>
