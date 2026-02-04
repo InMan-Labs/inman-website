@@ -396,7 +396,7 @@ const ProductPage = () => {
       </section>
 
        {/* Footer */}
-      <footer className="border-t border-slate-200 bg-white">
+      <footer className="border-t border-subtle bg-card/30">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Brand */}
