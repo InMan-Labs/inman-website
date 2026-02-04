@@ -445,7 +445,7 @@ const ProductPage = () => {
               <Link 
                 to="/demo" 
                 onClick={() => window.scrollTo(0, 0)}
-                className="inline-flex items-center text-sm text-blue-600 hover:text-blue-700 transition-colors font-medium"
+                className="inline-flex items-center text-sm text-primary hover:text-primary/80 transition-colors font-medium"
               >
                 Schedule a Demo →
               </Link>
