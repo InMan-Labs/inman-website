@@ -20,7 +20,7 @@ export const Footer = () => {
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 bg-accent-gradient rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">I</span>
+                <span className="text-primary-foreground font-bold text-sm">IM</span>
               </div>
               <span className="font-semibold text-lg text-foreground">InMan Labs</span>
             </div>
