@@ -15,7 +15,7 @@ export const Footer = () => {
     <footer className="border-t border-subtle bg-card/30">
       <div className="section-container">
         {/* Main Footer Content */}
-        <div className="py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand Column */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
