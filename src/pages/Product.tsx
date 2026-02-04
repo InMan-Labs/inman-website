@@ -414,18 +414,18 @@ const ProductPage = () => {
 
             {/* Product */}
             <div>
-              <h4 className="font-semibold text-slate-900 mb-4">Product</h4>
+              <h4 className="font-semibold text-foreground mb-4">Product</h4>
               <ul className="space-y-2">
-                <li>
-                  <Link to="/product" onClick={() => window.scrollTo(0, 0)} className="text-sm text-slate-600 hover:text-slate-900 transition-colors">
-                    How It Works
-                  </Link>
-                </li>
+                 <li>
+                <Link to="/product" onClick={() => window.scrollTo(0, 0)} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  How It Works
+                </Link>
+              </li>
               </ul>
             </div>
 
             {/* Company */}
-            <div>
+            {/* <div>
               <h4 className="font-semibold text-slate-900 mb-4">Company</h4>
               <ul className="space-y-2">
                 <li>
@@ -434,34 +434,40 @@ const ProductPage = () => {
                   </Link>
                 </li>
               </ul>
-            </div>
+            </div> */}
 
             {/* Get Started */}
-            <div>
-              <h4 className="font-semibold text-slate-900 mb-4">Get Started</h4>
-              <p className="text-sm text-slate-600 mb-3">
-                Ready to see how InMan can transform your infrastructure operations?
-              </p>
-              <Link 
-                to="/demo" 
-                onClick={() => window.scrollTo(0, 0)}
-                className="inline-flex items-center text-sm text-primary hover:text-primary/80 transition-colors font-medium"
-              >
-                Schedule a Demo →
-              </Link>
-            </div>
+         <div>
+            <h4 className="font-semibold text-foreground mb-4">Get Started</h4>
+            <p className="text-sm text-muted-foreground mb-3">
+              Ready to see how InMan can transform your infrastructure operations?
+            </p>
+            <Link 
+              to="/demo" 
+              onClick={() => window.scrollTo(0, 0)}
+              className="inline-flex items-center text-sm text-primary hover:text-primary/80 transition-colors font-medium"
+            >
+              Schedule a Demo →
+            </Link>
           </div>
+        </div>
 
           {/* Bottom Bar */}
-          <div className="py-6 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-slate-500">
-              © {new Date().getFullYear()} Inferman Labs. All rights reserved.
-            </p>
-            <div className="flex items-center gap-6 text-sm text-slate-500">
-              <a href="#" className="hover:text-slate-900 transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-slate-900 transition-colors">Terms of Service</a>
-            </div>
+          <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="py-6 border-t border-subtle flex flex-col md:flex-row items-center justify-between gap-4"
+        >
+          <p className="text-sm text-muted-foreground">
+            © {currentYear} InMan Labs. All rights reserved.
+          </p>
+          <div className="flex items-center gap-6 text-sm text-muted-foreground">
+            <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>
           </div>
+        </motion.div>
         </div>
       </footer>
     </div>
