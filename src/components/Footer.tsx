@@ -67,7 +67,7 @@ export const Footer = () => {
           </div>
 
           {/* Company Column */}
-          <div>
+          {/* <div>
             <h4 className="font-semibold text-foreground mb-4">Company</h4>
             <ul className="space-y-2">
               <li>
@@ -76,7 +76,7 @@ export const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Get Started Column */}
           <div>
