@@ -15,7 +15,7 @@ export const Footer = () => {
     <footer className="border-t border-subtle bg-card/30">
       <div className="section-container">
         {/* Main Footer Content */}
-        <div className="py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Column */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
@@ -30,8 +30,7 @@ export const Footer = () => {
           </div>
 
           {/* Product Column */}
-          <div className="md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
+          <div>
             <h4 className="font-semibold text-foreground mb-4">Product</h4>
             <ul className="space-y-2">
               <li>
@@ -66,10 +65,21 @@ export const Footer = () => {
               </li>
             </ul>
           </div>
-          </div>
 
-          <div className="md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
+          {/* Company Column */}
+          {/* <div>
+            <h4 className="font-semibold text-foreground mb-4">Company</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/demo" onClick={() => window.scrollTo(0, 0)} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Request a Demo
+                </Link>
+              </li>
+            </ul>
+          </div> */}
+
+          {/* Get Started Column */}
+          <div>
             <h4 className="font-semibold text-foreground mb-4">Get Started</h4>
             <p className="text-sm text-muted-foreground mb-3">
               Ready to see how InMan can transform your infrastructure operations?
@@ -81,7 +91,6 @@ export const Footer = () => {
             >
               Schedule a Demo →
             </Link>
-          </div>
           </div>
         </div>
 
