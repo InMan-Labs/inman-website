@@ -5,8 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { label: "Problem", href: "#problem", isRoute: false },
   { label: "Product", href: "/product", isRoute: true },
+  { label: "Problem", href: "#problem", isRoute: false },
   { label: "ROI Calculator", href: "#roi-calculator", isRoute: false },
   { label: "Use Cases", href: "#use-cases", isRoute: false },
   { label: "Security", href: "#security", isRoute: false },
@@ -61,7 +61,7 @@ export const Navbar = () => {
               <div className="w-8 h-8 bg-accent-gradient rounded-lg flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-sm">I</span>
               </div>
-              <span className="font-semibold text-lg text-foreground">Inferman Labs</span>
+              <span className="font-semibold text-lg text-foreground">InMan Labs</span>
             </a>
 
             {/* Desktop Navigation */}
