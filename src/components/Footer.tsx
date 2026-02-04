@@ -22,7 +22,7 @@ export const Footer = () => {
               <div className="w-8 h-8 bg-accent-gradient rounded-lg flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-sm">I</span>
               </div>
-              <span className="font-semibold text-lg text-foreground">Inferman Labs</span>
+              <span className="font-semibold text-lg text-foreground">InMan Labs</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Governed execution for infrastructure operations. Safety, control, and auditability at every step.
@@ -103,7 +103,7 @@ export const Footer = () => {
           className="py-6 border-t border-subtle flex flex-col md:flex-row items-center justify-between gap-4"
         >
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Inferman Labs. All rights reserved.
+            © {currentYear} InMan Labs. All rights reserved.
           </p>
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
             <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
