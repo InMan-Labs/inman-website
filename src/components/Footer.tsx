@@ -30,7 +30,8 @@ export const Footer = () => {
           </div>
 
           {/* Product Column */}
-          <div>
+          <div className="md:col-span-1">
+            <div className="flex items-center gap-2 mb-4">
             <h4 className="font-semibold text-foreground mb-4">Product</h4>
             <ul className="space-y-2">
               <li>
@@ -65,21 +66,10 @@ export const Footer = () => {
               </li>
             </ul>
           </div>
+          </div>
 
-          {/* Company Column */}
-          {/* <div>
-            <h4 className="font-semibold text-foreground mb-4">Company</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/demo" onClick={() => window.scrollTo(0, 0)} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Request a Demo
-                </Link>
-              </li>
-            </ul>
-          </div> */}
-
-          {/* Get Started Column */}
-          <div>
+          <div className="md:col-span-1">
+            <div className="flex items-center gap-2 mb-4">
             <h4 className="font-semibold text-foreground mb-4">Get Started</h4>
             <p className="text-sm text-muted-foreground mb-3">
               Ready to see how InMan can transform your infrastructure operations?
@@ -91,6 +81,7 @@ export const Footer = () => {
             >
               Schedule a Demo →
             </Link>
+          </div>
           </div>
         </div>
 
