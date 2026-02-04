@@ -5,11 +5,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { label: "Problem", href: "#problem" },
-  { label: "Product", href: "#product" },
-  { label: "ROI Calculator", href: "#roi-calculator" },
-  { label: "Use Cases", href: "#use-cases" },
-  { label: "Security", href: "#security" },
+  { label: "Problem", href: "#problem", isRoute: false },
+  { label: "Product", href: "/product", isRoute: true },
+  { label: "ROI Calculator", href: "#roi-calculator", isRoute: false },
+  { label: "Use Cases", href: "#use-cases", isRoute: false },
+  { label: "Security", href: "#security", isRoute: false },
 ];
 
 export const Navbar = () => {
@@ -67,13 +67,24 @@ export const Navbar = () => {
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-8">
               {navLinks.map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => scrollToSection(link.href)}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
-                >
-                  {link.label}
-                </button>
+                link.isRoute ? (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    onClick={() => window.scrollTo(0, 0)}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <button
+                    key={link.href}
+                    onClick={() => scrollToSection(link.href)}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                  >
+                    {link.label}
+                  </button>
+                )
               ))}
             </div>
 
@@ -109,13 +120,27 @@ export const Navbar = () => {
           >
             <div className="section-container py-8 flex flex-col gap-6">
               {navLinks.map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => scrollToSection(link.href)}
-                  className="text-lg text-muted-foreground hover:text-foreground transition-colors text-left py-2"
-                >
-                  {link.label}
-                </button>
+                link.isRoute ? (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      window.scrollTo(0, 0);
+                    }}
+                    className="text-lg text-muted-foreground hover:text-foreground transition-colors text-left py-2"
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <button
+                    key={link.href}
+                    onClick={() => scrollToSection(link.href)}
+                    className="text-lg text-muted-foreground hover:text-foreground transition-colors text-left py-2"
+                  >
+                    {link.label}
+                  </button>
+                )
               ))}
               <div className="flex flex-col gap-3 pt-4 border-t border-subtle">
                 <Link to="/demo" onClick={() => setIsMobileMenuOpen(false)}>
