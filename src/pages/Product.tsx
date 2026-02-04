@@ -400,7 +400,7 @@ const ProductPage = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Brand */}
-            div className="md:col-span-1">
+            <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 bg-accent-gradient rounded-lg flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-sm">I</span>
