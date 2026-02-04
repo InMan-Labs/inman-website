@@ -453,21 +453,15 @@ const ProductPage = () => {
         </div>
 
           {/* Bottom Bar */}
-          <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="py-6 border-t border-subtle flex flex-col md:flex-row items-center justify-between gap-4"
-        >
-          <p className="text-sm text-muted-foreground">
-            © {currentYear} InMan Labs. All rights reserved.
-          </p>
-          <div className="flex items-center gap-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>
+           <div className="py-6 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-sm text-slate-500">
+              © {new Date().getFullYear()} Inferman Labs. All rights reserved.
+            </p>
+            <div className="flex items-center gap-6 text-sm text-slate-500">
+              <a href="#" className="hover:text-slate-900 transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-slate-900 transition-colors">Terms of Service</a>
+            </div>
           </div>
-        </motion.div>
         </div>
       </footer>
     </div>
