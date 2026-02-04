@@ -34,6 +34,11 @@ export const Footer = () => {
             <h4 className="font-semibold text-foreground mb-4">Product</h4>
             <ul className="space-y-2">
               <li>
+                <Link to="/product" onClick={() => window.scrollTo(0, 0)} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  How It Works
+                </Link>
+              </li>
+              <li>
                 <button onClick={() => scrollToSection("#problem")} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   The Problem
                 </button>
